@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<h1>{{items.lastIndex | async }}</h1>
+<ul>
+  <li *ngFor="let item of items | async">
+    <!--<span>{{item | json }}</span>-->
+    {{ item.timestamp | date: 'medium'}}<br>
+    Temperature = {{ item.temperature | number: '2.2-2'}}<br>
+    Humidity = {{ item.Humidity | number: '2.2-2'}}<br>
+    HeatIndex = {{ item.HeatIndex | number: '2.2-2'}}<br>
+  </li>
+</ul>
